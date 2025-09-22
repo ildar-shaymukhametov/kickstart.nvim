@@ -171,23 +171,6 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
-if vim.fn.has 'win32' == 1 then
-  -- Set shell to pwsh if available, otherwise powershell
-  vim.o.shell = vim.fn.executable 'pwsh' == 1 and 'pwsh' or 'powershell'
-
-  -- Set shell command flags with UTF-8 encoding and output configuration
-  vim.o.shellcmdflag =
-    "-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';$PSStyle.OutputRendering='plaintext';Remove-Alias -Force -ErrorAction SilentlyContinue tee;"
-
-  -- Set shell redirection and pipe commands
-  vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
-  vim.o.shellpipe = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
-
-  -- Set shell quote options
-  vim.o.shellquote = ''
-  vim.o.shellxquote = ''
-end
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
