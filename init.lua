@@ -885,6 +885,8 @@ require('lazy').setup({
         -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
         -- <c-e>: Hide menu
         -- <c-k>: Toggle signature help
+        ['<C-u>'] = { 'scroll_signature_up', 'fallback' },
+        ['<C-d>'] = { 'scroll_signature_down', 'fallback' },
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'enter',
