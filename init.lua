@@ -926,7 +926,13 @@ require('lazy').setup({
       fuzzy = { implementation = 'lua' },
 
       -- Shows a signature help window while you type arguments for a function
-      signature = { enabled = true },
+      signature = {
+        enabled = true,
+        trigger = {
+          enabled = true,
+          show_on_insert_on_trigger_character = true,
+        },
+      },
     },
   },
 
