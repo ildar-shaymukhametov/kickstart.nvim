@@ -222,6 +222,15 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_autocmd('TermOpen', {
+  callback = function()
+    if vim.bo.buflisted then
+      vim.opt_local.number = true
+      vim.opt_local.relativenumber = true
+    end
+  end,
+})
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`
