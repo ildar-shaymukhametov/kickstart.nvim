@@ -792,8 +792,8 @@ require('lazy').setup({
     end,
   },
   {
-    'seblyng/roslyn.nvim',
-    ft = 'cs',
+    'tris203/roslyn.nvim',
+    branch = 'semantic_tokens',
     opts = {
       filewatching = 'off',
     },
