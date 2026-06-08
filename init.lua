@@ -795,10 +795,11 @@ require('lazy').setup({
     end,
   },
   {
-    'tris203/roslyn.nvim',
-    branch = 'semantic_tokens',
+    'seblyng/roslyn.nvim',
+    ---@module 'roslyn.config'
+    ---@type RoslynNvimConfig
     opts = {
-      filewatching = 'off',
+      -- your configuration comes here; leave empty for default settings
     },
   },
   { -- Autoformat
