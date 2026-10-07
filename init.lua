@@ -217,7 +217,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 --  See `:help lua-guide-autocommands`
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'html',
+  pattern = { 'html', 'csharp', 'cs' },
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.shiftwidth = 4
@@ -793,14 +793,6 @@ require('lazy').setup({
         },
       }
     end,
-  },
-  {
-    'seblyng/roslyn.nvim',
-    ---@module 'roslyn.config'
-    ---@type RoslynNvimConfig
-    opts = {
-      -- your configuration comes here; leave empty for default settings
-    },
   },
   { -- Autoformat
     'stevearc/conform.nvim',
